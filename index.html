@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RemindWeb</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+     </div>
+    <header>
+        <h1>RemindWeb</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><button class="btn-confg">
+                    Configuración
+                    </>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <button class="btn-add" id="btn-add">Agregar Reminder</button>
+        <section class="reminders-container">
+            <ul class="reminders-list" id="reminders-list">
+            </ul>
+        </section>
+    </main>
+    <dialog id="modal-add-reminder">
+        <h3>Añadir Reminder</h3>
+        <form action="submit" class="form-add-reminder" id="form-add-reminder">
+            <label for="title">Título</label>
+            <input type="text" name="title" id="title">
+            <label for="description">Descripción</label>
+            <textarea name="description" id="description" cols="30" rows="10"></textarea>
+            <label for="time">Fecha y Hora</label>
+            <input type="datetime-local" name="time" id="time" >
+            <label for="" class="remember">
+                <h5>Recordar</h5>
+                <input type="checkbox" name="week" id="week"> 1 semana antes
+                <input type="checkbox" name="day" id="day"> 1 día antes
+                <input type="checkbox" name="hour" id="hour"> 1 hora antes
+                <input type="checkbox" name="minutes" id="minutes"> 15 minutos antes
+            </label>
+            <button class="btn-cancel" id="btn-close">Cancelar</button>
+            <input type="submit" value="Añadir" id="btn-submit">
+            
+        </form>
+    </dialog>
+    <dialog id="modal-config">
+        <h3>Configuración</h3>
+        <form action="submit" id="form-config">
+            <label for="chatId">Chat Id de Telegram:</label>
+            <input type="number" name="chatId" id="chatid-input">
+            <input type="submit" value="Guardar" id="btn-save-config">
+            <input type="button" value="Cancelar" class="btn-cancel" id="btn-close-config">
+        </form>
+    </dialog>
+    <dialog id="modal-first-instructions" class="modal-first-instructions">
+        <h4>Sigue las siguientes instrucciones porfavor</h4>
+        <label for="">
+            <p>Ingresa a telegram y busca el bot llamado RemindWeb.</p>
+            <img src="imgs/1.png" alt="Primera instruccion ">
+        </label>
+        <label for="">
+            <p>Escribe el comando start, de esta forma recibiras tu chatId
+            </p>
+            <img src="imgs/2.png" alt="Segunda instrucción">
+        </label>
+        <label for="">
+            <p>Copia este chatId en la ventana de configuración 
+            </p>
+            <img src="imgs/3.png" alt="Tercera instruccion">
+        </label>
+        <label for="">
+            <p>Recibiras un mensaje en telegram que te noficara el exito del envio del chatId y listo
+            </p>
+            <img src="imgs/4.png" alt="Cuarta instruccion">
+        </label>
+        <button id="btn-close-first-instructions" class="btn-cancel">Entendido</button>
+    </dialog>
+    <footer>
+        <p>RemindWeb &copy; 2020</p>
+    </footer>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
